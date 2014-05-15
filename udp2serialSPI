@@ -1,0 +1,29 @@
+#!/bin/sh /etc/rc.common
+
+START=66
+STOP=99
+
+start() {
+        if [ ! -e /var/run/udp2serialSPI.pid ]; then
+                cd /usr/bin
+                reset-mcu
+                python udp2serialSPI.py 2> /dev/null &
+                echo $! > /var/run/udp2serialSPI.pid       
+        else                                            
+                echo "Cannot start udp2serialSPI, a pidfile already esists"
+        fi                                              
+}                                                       
+
+stop() {                                                
+        if [ -e /var/run/udp2serialSPI.pid ]; then
+                kill `cat /var/run/udp2serialSPI.pid`
+                rm /var/run/udp2serialSPI.pid
+        else
+                echo "No pidfile found for udp2serialSPI"
+        fi
+}
+
+restart() {
+        stop
+        start
+}
