@@ -4,7 +4,7 @@ udp2serialSPI
 A bridge between udp packets and a ttySPI serial port.
 Framing the UDP packets data on the serial line with slip. 
 Developed to use the OSC protocol on the Arduino Yun.
-This release does uses the SPI port insted of the serial port as in usp2serial
+This release uses the SPI port insted of the serial port as in usp2serial
 
 version 1.0  May 15/2014
 
@@ -32,7 +32,7 @@ the examples control led13 on the YUN changing the light intensity.
 The arduino sketch OSC_SerialSPI_LED processes the OSC message /All/R with a float value 0..100
 and replyes back to the sender (/reply) with a float value 0..255
 
-To build the Arduino example the IDE requires 2 libraries (that are here included):
+To build the Arduino example the IDE requires 2 libraries (that are here included compressed):
 I have built it with IDE 1.5.6-r2
 
 SPIDEV
@@ -54,7 +54,7 @@ It requires the oscP5 library by Andreas Schlegel: http://www.sojamo.de/librarie
 I have tested it with Processing (2.1.2).
 
 TouchOSC 
-testLED.touchOSC is an inteface for http://hexler.net/software/touchosc
+testLED.touchOSC is an interface for http://hexler.net/software/touchosc
 the app is available on Apple Store and Android Play store.
 
 ////////////////////////////////////////////////////////////////////////
