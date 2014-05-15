@@ -57,6 +57,11 @@ TouchOSC
 testLED.touchOSC is an interface for http://hexler.net/software/touchosc
 the app is available on Apple Store and Android Play store.
 
+Final note:
+If a new firmware is uploaded to the AVR by network the SPI TTY driver exits (spi_tty_exit: SPI TTY EXIT)
+a linino reboot reloads the driver.
+
+
 ////////////////////////////////////////////////////////////////////////
 
 
