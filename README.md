@@ -4,7 +4,7 @@ udp2serialSPI
 A bridge between udp packets and a ttySPI serial port.
 Framing the UDP packets data on the serial line with slip. 
 Developed to use the OSC protocol on the Arduino Yun.
-This release uses the SPI port insted of the serial port as in usp2serial
+This release uses the SPI port instead of the serial port as in udp2serial https://github.com/cylinderlight/udp2serial
 
 version 1.0  May 15/2014
 
