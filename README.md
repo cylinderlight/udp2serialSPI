@@ -15,9 +15,9 @@ http://download.linino.org/linino_distro/master/20140513.0/openwrt-ar71xx-generi
 
 Setup procedure:
 the included file setup_push_udp2serialSPI.sh
-pushes all the required code to the OpenWRT environment via SSH,
+pushes all the required files to the OpenWRT environment via SSH,
 this includes a startup script and Avahi configuration.
-from a terminal execute: 
+from a terminal of your workstation execute: 
 ./setup_push_udp2serialSPI.sh linino.local
 (change the server name with your hostname)
 the openWRT password is requested several times (default on linino is doghunter) and then the system reboots with the full working configuration.
@@ -30,28 +30,27 @@ Examples:
 the examples control led13 on the YUN changing the light intensity.
 
 The arduino sketch OSC_SerialSPI_LED processes the OSC message /All/R with a float value 0..100
-and replyes back to the sender (/reply) with a float value 0..255
+and replyes back to the sender (/reply) with a corresponding float value 0..255
 
 To build the Arduino example the IDE requires 2 libraries (that are here included compressed):
 I have built it with IDE 1.5.6-r2
 
 SPIDEV
 This library is extracted from a branch of the Arduino IDE modified by the Linino team
-that is found here: https://github.com/linino/Arduino
+found here: https://github.com/linino/Arduino/tree/linino_board/hardware/arduino/avr/libraries/SPI
 
 
 OSC 
 This library is developed at CNMAT (http://cnmat.berkeley.edu/oscuino)
 by Adrian Freed and others https://github.com/CNMAT/OSC.
-I have made 2 additons SLIPEncodedSPISerial.h, SLIPEncodedSPISerial.cpp to support the new StreamSPI class.
 
 
 There are 2 test applications:
 
 OSC_LED_send
-this is a Processing application. Moving the mouse verticaly sends a different value.
+This is a Processing application. Moving the mouse verticaly sends a different value.
 It requires the oscP5 library by Andreas Schlegel: http://www.sojamo.de/libraries/oscP5/
-I have tested it with Processing (2.1.2).
+I have tested it with Processing 2.1.2.
 
 TouchOSC 
 testLED.touchOSC is an interface for http://hexler.net/software/touchosc
